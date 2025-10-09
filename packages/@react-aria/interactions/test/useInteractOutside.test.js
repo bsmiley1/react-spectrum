@@ -22,9 +22,7 @@ import {
 import {enableShadowDOM} from '@react-stately/flags';
 import React, {useEffect, useRef} from 'react';
 import ReactDOM, {createPortal} from 'react-dom';
-import {UNSAFE_PortalProvider} from '@react-aria/overlays';
 import {useInteractOutside} from '../';
-import userEvent from '@testing-library/user-event';
 
 function Example(props) {
   let ref = useRef();

@@ -20,7 +20,6 @@ import {Provider} from '@react-spectrum/provider';
 import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import {Example as StorybookExample} from '../stories/FocusScope.stories';
-import {UNSAFE_PortalProvider} from '@react-aria/overlays';
 import {useEvent} from '@react-aria/utils';
 import userEvent from '@testing-library/user-event';
 
