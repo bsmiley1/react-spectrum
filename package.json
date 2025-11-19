@@ -184,6 +184,7 @@
     "recursive-readdir": "^2.2.2",
     "regenerator-runtime": "0.13.3",
     "rimraf": "^6.0.1",
+    "shadow-dom-testing-library": "^1.13.1",
     "sharp": "^0.33.5",
     "storybook": "^8.6.14",
     "storybook-dark-mode": "^4.0.2",
@@ -275,8 +276,5 @@
   },
   "locales": [
     "en-US"
-  ],
-  "dependencies": {
-    "shadow-dom-testing-library": "^1.13.1"
-  }
+  ]
 }
