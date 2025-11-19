@@ -71,6 +71,27 @@ export function ariaHideOutside(targets: Element[], options?: AriaHideOutsideOpt
     }
 
     let acceptNode = (node: Element) => {
+      // Special handling for shadow hosts: If a shadow host contains a visible target,
+      // ensure it's not hidden (even if previously marked inert by parent overlays).
+      // Must check this BEFORE hiddenNodes check to handle nested overlay scenarios.
+      if ('shadowRoot' in node && (node as any).shadowRoot) {
+        let shadowRoot = (node as any).shadowRoot;
+        for (let target of visibleNodes) {
+          if (!shadowRoot.contains(target)) {
+            continue;
+          }
+          visibleNodes.add(node);
+          if (getHidden(node)) {
+            setHidden(node, false);
+            let count = refCountMap.get(node);
+            if (count && count > 0) {
+              refCountMap.set(node, count - 1);
+            }
+          }
+          return NodeFilter.FILTER_REJECT;
+        }
+      }
+      
       // Skip this node and its children if it is one of the target nodes, or a live announcer.
       // Also skip children of already hidden nodes, as aria-hidden is recursive. An exception is
       // made for elements with role="row" since VoiceOver on iOS has issues hiding elements with role="row".
