@@ -9,6 +9,7 @@ import '../../tailwind/tailwind.css';
 import Anatomy from '@react-aria/datepicker/docs/daterangepicker-anatomy.svg';
 
 export const tags = ['calendar', 'input'];
+export const relatedPages = [{'title': 'useDateRangePicker', 'url': 'https://react-spectrum.adobe.com/react-aria/useDateRangePicker.html'}];
 
 # DateRangePicker
 
@@ -35,7 +36,7 @@ export const tags = ['calendar', 'input'];
 
 ## Value
 
-Use the `value` or `defaultValue` prop to set the selected date range, using objects in the [@internationalized/date](../internationalized/date/) package. This library supports parsing date strings in multiple formats, manipulation across international calendar systems, time zones, etc.
+Use the `value` or `defaultValue` prop to set the selected date range, using objects in the [@internationalized/date](../internationalized/date/index.html) package. This library supports parsing date strings in multiple formats, manipulation across international calendar systems, time zones, etc.
 
 ```tsx render
 "use client";
@@ -50,7 +51,7 @@ function Example() {
     end: parseDate('2025-02-12')
   });
   let formatter = useDateFormatter({ dateStyle: 'long' });
-  
+
   return (
     <>
       <DateRangePicker
@@ -113,7 +114,7 @@ import {isWeekend, today, getLocalTimeZone} from '@internationalized/date';
 import {useLocale} from 'react-aria';
 import {DateRangePicker} from 'vanilla-starter/DateRangePicker';
 import {Button} from 'vanilla-starter/Button';
-import {Form} from 'react-aria-components';
+import {Form} from 'vanilla-starter/Form';;
 
 function Example(props) {
   let {locale} = useLocale();
@@ -174,5 +175,3 @@ function Example(props) {
 ### DateRangePicker
 
 <PropTable component={docs.exports.DateRangePicker} links={docs.links} />
-
-<StateTable defaultClassName="react-aria-DateRangePicker" properties={docs.exports.DateRangePickerRenderProps.properties} />

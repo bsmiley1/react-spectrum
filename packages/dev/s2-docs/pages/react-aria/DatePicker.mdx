@@ -9,6 +9,7 @@ import '../../tailwind/tailwind.css';
 import Anatomy from '@react-aria/datepicker/docs/datepicker-anatomy.svg';
 
 export const tags = ['calendar', 'input'];
+export const relatedPages = [{'title': 'useDatePicker', 'url': 'https://react-spectrum.adobe.com/react-aria/useDatePicker.html'}];
 
 # DatePicker
 
@@ -35,7 +36,7 @@ export const tags = ['calendar', 'input'];
 
 ## Value
 
-Use the `value` or `defaultValue` prop to set the date value, using objects in the [@internationalized/date](../internationalized/date/) package. This library supports parsing date strings in multiple formats, manipulation across international calendar systems, time zones, etc.
+Use the `value` or `defaultValue` prop to set the date value, using objects in the [@internationalized/date](../internationalized/date/index.html) package. This library supports parsing date strings in multiple formats, manipulation across international calendar systems, time zones, etc.
 
 ```tsx render
 "use client";
@@ -47,7 +48,7 @@ import {useState} from 'react';
 function Example() {
   let [date, setDate] = useState(parseDate('2020-02-03'));
   let formatter = useDateFormatter({ dateStyle: 'full' });
-  
+
   return (
     <>
       <DatePicker
@@ -100,7 +101,7 @@ import {isWeekend, today, getLocalTimeZone} from '@internationalized/date';
 import {useLocale} from 'react-aria';
 import {DatePicker} from 'vanilla-starter/DatePicker';
 import {Button} from 'vanilla-starter/Button';
-import {Form} from 'react-aria-components';
+import {Form} from 'vanilla-starter/Form';;
 
 function Example() {
   let {locale} = useLocale();
@@ -157,5 +158,3 @@ function Example() {
 ### DatePicker
 
 <PropTable component={docs.exports.DatePicker} links={docs.links} />
-
-<StateTable defaultClassName="react-aria-DatePicker" properties={docs.exports.DatePickerRenderProps.properties} />
